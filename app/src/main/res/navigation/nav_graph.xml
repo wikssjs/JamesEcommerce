@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/intro_fragment">
+
+    <fragment
+        android:id="@+id/intro_fragment"
+        android:name="com.ebookfrenzy.projetibj.FirstFragment"
+        android:label="@string/intro_activity_label"
+        tools:layout="@layout/intro_activity">
+
+        <action
+            android:id="@+id/intro_activity_to_sign_up_activity"
+            app:destination="@id/SignupFragment" />
+
+        <action android:id="@+id/intro_activity_to_login_activity"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/SignupFragment"
+        android:name="com.ebookfrenzy.projetibj.SecondFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/sign_up_activity">
+
+        <action
+            android:id="@+id/login_activity_to_introActivity"
+            app:destination="@id/intro_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.ebookfrenzy.projetibj.SecondFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/sign_up_activity">
+
+        <action
+            android:id="@+id/login_activity_to_introActivity"
+            app:destination="@id/intro_fragment" />
+    </fragment>
+</navigation>

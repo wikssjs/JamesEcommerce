@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "820060286580",
+    "project_id": "e-commerce-69b32",
+    "storage_bucket": "e-commerce-69b32.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:820060286580:android:e37a3475c3c6035cbc2b21",
+        "android_client_info": {
+          "package_name": "com.ebookfrenzy.projetibj"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "820060286580-dnb0fhommfp1n44m1706gvacql5tngl3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcxoadBrOSEgx3Qg_HJf_Er3EHki63vjU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "820060286580-dnb0fhommfp1n44m1706gvacql5tngl3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

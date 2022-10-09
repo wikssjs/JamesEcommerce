@@ -1,0 +1,55 @@
+{
+  "elements": [
+    {
+      "nom": "Banane",
+      "image": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_960_720.png",
+      "prix": "1.99"
+    },
+
+    {
+      "nom": "Pomme",
+        "image": "https://cdn.pixabay.com/photo/2014/12/21/23/25/apples-575317_960_720.png",
+        "prix": "2.33"
+    },
+    {
+      "nom": "Poire",
+        "image": "https://cdn.pixabay.com/photo/2021/09/14/18/28/pear-6624738_960_720.png",
+        "prix": "2.99"
+    },
+    {
+      "nom": "Cerise",
+        "image": "https://cdn.pixabay.com/photo/2014/12/21/23/34/cherry-575547_960_720.png",
+        "prix": "2.99"
+    },
+    {
+      "nom": "Pêche",
+        "image": "https://cdn.pixabay.com/photo/2012/04/24/23/39/peach-41169_960_720.png",
+        "prix": "1.99"
+    },
+    {
+      "nom": "Citron",
+        "image": "https://cdn.pixabay.com/photo/2013/07/12/19/16/lemon-154449_960_720.png",
+        "prix": "3.99"
+    },
+    {
+      "nom": "Fraise",
+        "image": "https://cdn.pixabay.com/photo/2012/04/18/12/54/strawberry-36949_960_720.png",
+        "prix": "1.75"
+    },
+    {
+      "nom": "Mangue",
+        "image": "https://cdn.pixabay.com/photo/2016/03/31/20/02/fresh-1295471_960_720.png",
+        "prix": "1.49"
+    },
+    {
+      "nom": "Pomme de terre",
+        "image": "https://cdn.pixabay.com/photo/2013/07/13/12/14/potato-159443_960_720.png",
+        "prix": "1.99"
+    },
+    {
+      "nom": "Orange",
+        "image": "https://cdn.pixabay.com/photo/2013/07/13/11/29/orange-158258_960_720.png",
+        "prix": "4.99"
+    }
+  ]
+}
