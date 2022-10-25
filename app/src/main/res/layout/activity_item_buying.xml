@@ -44,32 +44,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Spinner
-        android:id="@+id/buying_spinner"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buying_price" />
-
     <Button
-        android:id="@+id/button2"
         android:layout_width="180dp"
         android:layout_height="50dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="88dp"
         android:background="@drawable/gradient1"
         android:text="Buy Now"
         android:textSize="20dp"
         app:cornerRadius="10dp"
-        app:layout_constraintEnd_toStartOf="@+id/button3"
+        app:layout_constraintEnd_toStartOf="@+id/button_addToCart"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buying_spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/buying_price" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/button_addToCart"
         android:layout_width="180dp"
         android:layout_height="50dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="88dp"
         android:background="@drawable/gradient1"
         android:backgroundTintMode="multiply"
         android:text="Add to Cart"
@@ -77,6 +68,6 @@
         app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button2"
-        app:layout_constraintTop_toBottomOf="@+id/buying_spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/buying_price" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

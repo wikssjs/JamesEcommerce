@@ -29,12 +29,10 @@ android {
     buildFeatures {
         viewBinding true
     }
+    namespace 'com.ebookfrenzy.projetibj'
 }
 
 dependencies {
-    implementation files('libs/activation.jar')
-    implementation files('libs/additionnal.jar')
-    implementation files('libs/mail.jar')
 
     implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation 'com.google.android.material:material:1.6.1'
