@@ -6,12 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
-import com.ebookfrenzy.projetibj.Produit;
+import com.ebookfrenzy.projetibj.CartProducts;
 import com.ebookfrenzy.projetibj.R;
 
 import java.text.DecimalFormat;
@@ -19,11 +18,11 @@ import java.util.ArrayList;
 
 public class CartFragment extends Fragment {
 
-    public static ArrayList<Produit> produits = new ArrayList<>();
+    public static ArrayList<CartProducts> produits = new ArrayList<>();
     private CartFragmentAdapter adapter ;
     View rowView;
-    TextView subTotal,tax,total ;
-    Spinner spinner;
+    private static TextView  total ;
+   private static double  totals;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -36,10 +35,9 @@ public class CartFragment extends Fragment {
         adapter = new CartFragmentAdapter(produits,getContext());
         lv.setAdapter(adapter);
 
-        subTotal = rowView.findViewById(R.id.cart_subtotal_id);
-        tax = rowView.findViewById(R.id.cart_taxes_id);
         total = rowView.findViewById(R.id.cart_total_id);
-        spinner = rowView.findViewById(R.id.cart_spinner);
+
+
 
 
 
@@ -54,23 +52,23 @@ public class CartFragment extends Fragment {
             adapter = new CartFragmentAdapter(produits, getContext());
             lv.setAdapter(adapter);
 
-            double somme = 0;
 
+            double somme = 0;
             for (int i = 0; i < produits.size(); i++) {
                 Log.i("james",i+" i");
-                somme += produits.get(i).getPrix();
+                somme += produits.get(i).getProduit().getPrix() * produits.get(i).getQuantity();
             }
 
-            double taxes = (somme * 0.05);
-            double totals = somme + taxes;
+             totals= somme;
 
             DecimalFormat df = new DecimalFormat("0.00");
-            subTotal.setText("$ " + somme);
-            tax.setText(df.format(taxes));
-            total.setText(totals + "");
         }
 
 
         super.onStart();
+    }
+
+    public static void setTotal(double totals){
+        total.setText(totals+" $ ");
     }
 }

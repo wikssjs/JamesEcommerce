@@ -15,6 +15,13 @@
         android:theme="@style/Theme.ProjetIBJ"
         tools:targetApi="31">
         <activity
+            android:name=".IntroActivity1"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".ItemBuyingActivity"
             android:exported="false">
             <meta-data
@@ -44,7 +51,7 @@
             android:exported="false"
             android:label="@string/title_activity_login" />
         <activity
-            android:name=".IntroActivity1"
+            android:name=".LoadingActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>

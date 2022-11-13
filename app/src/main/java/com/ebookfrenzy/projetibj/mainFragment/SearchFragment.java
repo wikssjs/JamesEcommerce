@@ -31,13 +31,13 @@ public class SearchFragment extends Fragment {
         RecyclerView recyclerView = rowView.findViewById(R.id.search_RecyclerView);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(recyclerAdapter);
+        filter("sljadakdjakd");
 
         buildRecyclerView();
         EditText edtSearch = rowView.findViewById(R.id.edtSearch_Id);
         edtSearch.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-                filter("ksaldlakaldakld");
             }
         });
         edtSearch.addTextChangedListener(new TextWatcher() {

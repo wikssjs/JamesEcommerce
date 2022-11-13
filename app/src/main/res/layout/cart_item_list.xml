@@ -8,7 +8,7 @@
     <ImageView
         android:id="@+id/cart_image"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
@@ -17,9 +17,11 @@
         android:id="@+id/cart_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:text="TextView"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.262"
+        app:layout_constraintHorizontal_bias="0.004"
         app:layout_constraintStart_toEndOf="@+id/cart_image"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -27,29 +29,70 @@
         android:id="@+id/cart_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
         android:text="TextView"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.262"
+        app:layout_constraintHorizontal_bias="0.004"
         app:layout_constraintStart_toEndOf="@+id/cart_image"
         app:layout_constraintTop_toBottomOf="@+id/cart_name" />
-
-    <Spinner
-        android:id="@+id/cart_spinner"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView8"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Quantity"
-        app:layout_constraintEnd_toStartOf="@+id/cart_spinner"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Quantity :"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toStartOf="@+id/quantity_id"
+        app:layout_constraintHorizontal_bias="0.662"
         app:layout_constraintStart_toEndOf="@+id/cart_image"
         app:layout_constraintTop_toBottomOf="@+id/cart_price" />
+
+    <TextView
+        android:id="@+id/quantity_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="71dp"
+        android:text="TextView"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toEndOf="@+id/textView8"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/diminuer_button"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/minus_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/augmenter_button"
+        app:layout_constraintEnd_toStartOf="@+id/augmenter_button"
+        app:layout_constraintStart_toEndOf="@+id/quantity_id" />
+
+    <Button
+        android:id="@+id/augmenter_button"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="27dp"
+        android:background="@drawable/plus_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/diminuer_button"
+        app:layout_constraintTop_toBottomOf="@+id/cart_delete_item_button" />
+
+    <Button
+        android:id="@+id/cart_delete_item_button"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/delete_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.881"
+        app:layout_constraintStart_toEndOf="@+id/cart_name"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

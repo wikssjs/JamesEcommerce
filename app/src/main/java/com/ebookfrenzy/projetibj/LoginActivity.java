@@ -64,8 +64,9 @@ public class LoginActivity extends AppCompatActivity {
 
     private void checkBox() {
         String email = sharedPreferences.getString("email",null);
+        String password = sharedPreferences.getString("password",null);
 
-        if(email!=null){
+        if(email!=null&& password!=null){
             startActivity(new Intent(LoginActivity.this,MainActivity.class));
         }
     }

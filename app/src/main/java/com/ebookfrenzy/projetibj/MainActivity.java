@@ -1,5 +1,6 @@
 package com.ebookfrenzy.projetibj;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.WindowManager;
 
@@ -14,6 +15,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.Objects;
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -26,18 +28,24 @@ public class MainActivity extends AppCompatActivity {
     TabLayout tabLayout;
     ViewPager2 viewPager;
     ViewPageAdapter viewPageAdapter;
+    private static Context ctx;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         produits();
+
         setContentView(R.layout.activity_main);
+
+        ctx = this;
         /***
          * Pour éviter le bug de la barre de status
          */
         getWindow().setFlags(
                 WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         tabLayout = findViewById(R.id.tabLayout);
         viewPager = findViewById(R.id.viewPager);
         viewPageAdapter = new ViewPageAdapter(this);
@@ -79,6 +87,25 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Bundle b = getIntent().getExtras();
+
+        if (b != null) {
+            int position = (int) b.get("position");
+
+            if (position != 0) {
+                viewPager.setCurrentItem(position);
+            }
+        }
+    }
+
+    public void goToCart(int position) {
+        viewPager.setCurrentItem(1);
     }
 
     public void produits() {
@@ -108,7 +135,8 @@ public class MainActivity extends AppCompatActivity {
                                 JSONArray jsonArray = jsonObject.getJSONArray("products");
                                 for (int i = 0; i < jsonArray.length(); i++) {
                                     Produit p = new Produit();
-                                    p.setNom(jsonArray.getJSONObject(i).getString("name"));
+                                    String[] nom = jsonArray.getJSONObject(i).getString("name").split(" ");
+                                    p.setNom(nom[0]+" "+nom[1]+" "+nom[2]+" "+nom[3]+" "+nom[4]+" "+nom[5]);
                                     String price = jsonArray.getJSONObject(i).getJSONObject("price").getJSONObject("current").getString("value");
                                     p.setPrix(Double.parseDouble(price));
                                     p.setImage("https://" + jsonArray.getJSONObject(i).getString("imageUrl"));
@@ -123,6 +151,11 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        try {
+            TimeUnit.SECONDS.sleep(2);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 }
