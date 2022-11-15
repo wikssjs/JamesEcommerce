@@ -1,31 +1,31 @@
 # JamesEcommerce
 
 
-##Loading view
+#Loading view
 <img src="/images/loading.jpg" width=30%>
-##Intro view
-![](images/intro.jpg | width=200) 
+#Intro view
+<img src="/images/intro.jpg" width=30%>
 
-##Sign Up view
-![](images/signup.jpg)
+#Sign Up view
+<img src="/images/signup.jpg" width=30%>
 
-##Sign In view
-![](images/signin.jpg)
+#Sign In view
+<img src="/images/signin.jpg" width=30%>
 
-##Home view
-![](images/home.jpg)
+#Home view
+<img src="/images/home.jpg" width=30%>
 
-##Search view
-![](images/search.jpg)
+#Search view
+<img src="/images/search.jpg" width=30%>
 
-##cart view
-![](images/cart.jpg)
+#cart view
+<img src="/images/cart.jpg" width=30%>
 
-##Shipping view
-![](images/shipping.jpg)
+#Shipping view
+<img src="/images/shipping.jpg" width=30%>
 
-##Payment Method view
-![](images/payment_method.jpg)
+#Payment Method view
+<img src="/payment_method.jpg" width=30%>
 
-##Card Payment view
-![](images/card_payment.jpg)
+#Card Payment view
+<img src="/images/card_payment.jpg" width=30%>
