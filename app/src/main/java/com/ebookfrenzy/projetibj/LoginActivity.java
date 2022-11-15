@@ -33,6 +33,7 @@ public class LoginActivity extends AppCompatActivity {
     private CheckBox checkBox ;
     private FirebaseAuth mAuth;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
