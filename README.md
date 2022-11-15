@@ -5,7 +5,7 @@
 ![](images/loading.jpg)
 
 ##Intro view
-![](images/intro.jpg =250x250) 
+![](images/intro.jpg | width=200) 
 
 ##Sign Up view
 ![](images/signup.jpg)
