@@ -25,7 +25,7 @@
 <img src="/images/shipping.jpg" width=30%>
 
 ## Payment Method view
-<img src="/payment_method.jpg" width=30%>
+<img src="/images/payment_method.jpg" width=30%>
 
 ## Card Payment view
 <img src="/images/card_payment.jpg" width=30%>
