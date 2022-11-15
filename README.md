@@ -2,7 +2,7 @@
 
 
 ##Loading view
-<img src="/images/loading.jpg" width=50% height=200>
+<img src="/images/loading.jpg" width=50% height=400>
 ##Intro view
 ![](images/intro.jpg | width=200) 
 
