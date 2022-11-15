@@ -34,4 +34,8 @@
         <item>9</item>
         <item>10</item>
     </string-array>
+
+
+    <string name="ek_img_content">ExportKit Image</string>
+    <string name="e_commerce_string">E-COMMERCE</string>
 </resources>

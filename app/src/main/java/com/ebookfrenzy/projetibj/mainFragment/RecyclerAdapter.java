@@ -18,11 +18,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
-
+    private final IRecyvlerView iRecyvlerView;
     List<Produit> listProduits;
     private final Context context;
 
-    public RecyclerAdapter(List<Produit> listProduits, Context context) {
+    public RecyclerAdapter(IRecyvlerView iRecyvlerView, List<Produit> listProduits, Context context) {
+        this.iRecyvlerView = iRecyvlerView;
         this.listProduits = listProduits;
         this.context = context;
     }
@@ -31,11 +32,24 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
         public TextView name,price;
         public ImageView image ;
-        public ViewHolder(@NonNull View itemView) {
+        public ViewHolder(@NonNull View itemView, IRecyvlerView iRecyvlerView) {
             super(itemView);
             name = itemView.findViewById(R.id.nomId);
             price = itemView.findViewById(R.id.prixId);
             image = itemView.findViewById(R.id.imageId);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(iRecyvlerView!=null){
+                        int pos  = getAdapterPosition();
+
+                        if(pos!=RecyclerView.NO_POSITION){
+                            iRecyvlerView.OnItemClick(pos);
+                        }
+                    }
+                }
+            });
         }
     }
 
@@ -45,7 +59,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     public RecyclerAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View v = inflater.inflate(R.layout.grid_list_view,parent,false);
-        return new RecyclerAdapter.ViewHolder(v);
+        return new RecyclerAdapter.ViewHolder(v,iRecyvlerView);
     }
 
     @Override
@@ -53,7 +67,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         Produit produits = listProduits.get(position);
         holder.name.setText(produits.getNom());
         Picasso.get().load(produits.getImage()).into(holder.image);
-        holder.price.setText(String.valueOf(produits.getPrix()));
+        holder.price.setText((produits.getPrix())+" $");
     }
 
     @Override
@@ -66,4 +80,5 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         notifyDataSetChanged();
 
     }
+
 }

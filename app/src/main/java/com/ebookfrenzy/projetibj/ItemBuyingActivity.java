@@ -82,8 +82,6 @@ private int count = 0;
         findViewById(R.id.cart_floatingActionButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"caca",Toast.LENGTH_LONG).show();
-                MainActivity main = new MainActivity();
                 Intent i = new Intent(ItemBuyingActivity.this,MainActivity.class);
                 i.putExtra("position",2);
                 startActivity(i);
@@ -116,11 +114,13 @@ private int count = 0;
                         }
                     });
 
-                 container.findViewById(R.id.button5).setOnClickListener(new View.OnClickListener() {
+                 container.findViewById(R.id.popup_window_goToCart).setOnClickListener(new View.OnClickListener() {
                      @Override
                      public void onClick(View v) {
-                         Toast.makeText(getApplicationContext(),"trop",Toast.LENGTH_LONG).show();
-
+                         Toast.makeText(getApplicationContext(),"cart",Toast.LENGTH_LONG).show();
+                         Intent i = new Intent(ItemBuyingActivity.this,MainActivity.class);
+                         i.putExtra("position",2);
+                         startActivity(i);
                      }
                  });
                 }

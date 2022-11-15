@@ -1,6 +1,7 @@
 package com.ebookfrenzy.projetibj;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.WindowManager;
 
@@ -14,6 +15,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
@@ -29,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     ViewPager2 viewPager;
     ViewPageAdapter viewPageAdapter;
     private static Context ctx;
+    public static ArrayList<Produit> produits;
 
 
     @Override
@@ -38,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
+        produits = new ArrayList<>();
         ctx = this;
         /***
          * Pour éviter le bug de la barre de status
@@ -136,11 +140,11 @@ public class MainActivity extends AppCompatActivity {
                                 for (int i = 0; i < jsonArray.length(); i++) {
                                     Produit p = new Produit();
                                     String[] nom = jsonArray.getJSONObject(i).getString("name").split(" ");
-                                    p.setNom(nom[0]+" "+nom[1]+" "+nom[2]+" "+nom[3]+" "+nom[4]+" "+nom[5]);
+                                    p.setNom(nom[0]+" "+nom[1]+" "+nom[2]+" "+nom[3]+" "+nom[4]);
                                     String price = jsonArray.getJSONObject(i).getJSONObject("price").getJSONObject("current").getString("value");
                                     p.setPrix(Double.parseDouble(price));
                                     p.setImage("https://" + jsonArray.getJSONObject(i).getString("imageUrl"));
-                                    Produit.liste.add(p);
+                                    produits.add(p);
                                 }
                             } catch (JSONException e) {
                                 e.printStackTrace();
@@ -156,6 +160,13 @@ public class MainActivity extends AppCompatActivity {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 
 }

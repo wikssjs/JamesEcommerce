@@ -11,6 +11,7 @@ import android.widget.GridView;
 import androidx.fragment.app.Fragment;
 
 import com.ebookfrenzy.projetibj.ItemBuyingActivity;
+import com.ebookfrenzy.projetibj.MainActivity;
 import com.ebookfrenzy.projetibj.Produit;
 import com.ebookfrenzy.projetibj.R;
 
@@ -24,7 +25,7 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        list= Produit.liste;
+        list= (ArrayList<Produit>) MainActivity.produits;
         ProductsAdapter adapter = new ProductsAdapter(list,getContext());
         View rowView = inflater.inflate(R.layout.fragment_home, container, false);
         gridView = rowView.findViewById(R.id.gridView);
