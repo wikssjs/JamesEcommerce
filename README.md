@@ -5,7 +5,7 @@
 ![](images/loading.jpg)
 
 ##Intro view
-![](images/intro.jpg)
+![](images/intro.jpg) = 250 x 250
 
 ##Sign Up view
 ![](images/signup.jpg)
