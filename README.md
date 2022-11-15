@@ -1,5 +1,10 @@
 # JamesEcommerce
 
+## Description
+My Ecomerce app created with Android Studio  using java, FireBase for user Authentication.
+In this App you can choose shoes and add them to cart, afterwards you have go add your Shipping
+Information and choosing your the payment method
+There's two payment Card 💳 and Paypal 
 
 ## Loading view
 <img src="/images/loading.jpg" width=30%>
