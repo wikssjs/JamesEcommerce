@@ -4,29 +4,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoadingActivity">
+    tools:context=".LoadingActivity" >
 
-    <View
-        android:id="@+id/rectangle_1"
-        android:layout_width="360dp"
-        android:layout_height="800dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="-24dp"
-        android:background="@drawable/loading"
-        />
-    <TextView
-        android:id="@+id/e_commerce"
-        android:layout_width="203dp"
-        android:layout_height="31dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="79dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="24dp"
-        android:text="James"
-        android:textAppearance="@drawable/style"
-        android:gravity="center_horizontal|top"
-        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#EF4648"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="0dp"
+            android:fontFamily="@font/yeseva_one"
+            android:text="E-Commerce"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView3"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/shop2_removebg_preview_1" />
+
+        <ProgressBar
+            android:id="@+id/progressBar2"
+            style="@android:style/Widget.Holo.Light.ProgressBar"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="160dp"
+            android:layout_marginTop="450dp"
+            android:layout_marginEnd="160dp"
+            android:layout_marginBottom="154dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,6 +21,7 @@ public class CartFragmentAdapter extends BaseAdapter {
     LayoutInflater inflater;
     ArrayList<CartProducts> produits;
     Context ctx;
+    private int quantity_save;
 
     public CartFragmentAdapter(ArrayList<CartProducts> produits, Context ctx){
         this.produits = produits;
@@ -51,6 +53,8 @@ public class CartFragmentAdapter extends BaseAdapter {
         TextView name = rowView.findViewById(R.id.cart_name);
         TextView price = rowView.findViewById(R.id.cart_price);
         TextView quantity = rowView.findViewById(R.id.quantity_id);
+        CartProducts produit = produits.get(position);
+        quantity_save = produit.getQuantity();
 
 
         rowView.findViewById(R.id.cart_delete_item_button).setOnClickListener(new View.OnClickListener() {
@@ -61,36 +65,54 @@ public class CartFragmentAdapter extends BaseAdapter {
             }
         });
 
-        rowView.findViewById(R.id.diminuer_button).setOnClickListener(new View.OnClickListener() {
+        Button diminuer = rowView.findViewById(R.id.diminuer_button);
+        diminuer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CartProducts produit = produits.get(position);
-                int quantity = produit.getQuantity();
-                if(quantity>1){
-                    produit.setQuantity(quantity-1);
+                int quantity = produit.getQuantity()-1;
+                quantity_save = quantity;
+                diminuer.setBackgroundTintList(ctx.getColorStateList(R.color.gray));
+                diminuer.setEnabled(false);
+                if(quantity>=1){
+                    produit.setQuantity(quantity);
                     notifyDataSetChanged();
                 }
 
             }
         });
 
-        rowView.findViewById(R.id.augmenter_button).setOnClickListener(new View.OnClickListener() {
+        Button augmenter = rowView.findViewById(R.id.augmenter_button);
+        augmenter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CartProducts produit = produits.get(position);
-                int quantity = produit.getQuantity();
-                if(quantity<10){
-                    produit.setQuantity(quantity+1);
-                    notifyDataSetChanged();
 
+                int quantity = produit.getQuantity()+1;
+                quantity_save = quantity;
+
+                    Log.i("quant",quantity+"");
+
+                if(quantity<=10){
+                    produit.setQuantity(quantity);
+                    notifyDataSetChanged();
                 }
+
+
             }
         });
+
+        if(quantity_save==10){
+            augmenter.setEnabled(false);
+            augmenter.setBackgroundTintList(ctx.getColorStateList(R.color.gray));
+        }
+
+        else if(quantity_save==1){
+            diminuer.setEnabled(false);
+            diminuer.setBackgroundTintList(ctx.getColorStateList(R.color.gray));
+        }
+
         double somme = 0;
         for (int i = 0; i < produits.size(); i++) {
-            Log.i("james",i+" i");
             somme += produits.get(i).getProduit().getPrix() * produits.get(i).getQuantity();
-            Log.i("quant",somme+"");
         }
         CartFragment.setTotal(somme);
 
