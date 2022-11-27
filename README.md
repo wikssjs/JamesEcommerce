@@ -6,6 +6,11 @@ In this App you can choose shoes and add them to cart, afterwards you have go ad
 Information and choosing your the payment method
 There's two payment Card 💳 and Paypal 
 
+
+# Project Video
+https://user-images.githubusercontent.com/72478345/204152950-0e98a981-0957-47c2-b65a-7a4a2e57b4cc.mp4
+
+
 ## Loading view
 <img src="/images/loading.jpg" width=30%>
 ## Intro view
